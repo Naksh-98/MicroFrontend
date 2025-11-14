@@ -1,0 +1,283 @@
+// Product List Styles
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+text-align: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+  .product-card-footer {
+    margin-top: auto;
+    .add-to-cart-button {
+      padding: 8px 12px;
+      background-color: #0b74de;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: #095bb5;
+      }
+    }
+  }
+  p:last-child {
+    overflow: auto;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0;
+    text-align: center;
+  }
+  img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.25rem 0;
+    color: #333;
+  }
+}
+.product-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+/* Body component styles (moved from src/components/Body.js) */
+.body-component {
+  padding: 20px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
+}
+
+.body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.shop-title {
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.filter-select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.main-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.main-section {
+  flex: 1;
+}
+
+.sidebar {
+  min-width: 220px;
+}
+
+.filter-box {
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  flex: 1;
+}
+
+.img-placeholder {
+  height: 120px;
+  border-radius: 6px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.btn {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn--primary {
+  background: #0b74de;
+  color: #fff;
+  border: none;
+}
+.btn--muted {
+  background: #eee;
+  color: #222;
+  border: none;
+}
+.full-width {
+  width: 100%;
+}
+
+.cart-drawer {
+  width: 320px;
+  border-left: 1px solid #eee;
+  padding-left: 18px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.qty-input {
+  width: 52px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.pager {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.page-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+.page-btn--active {
+  background: #0b74de;
+  color: #fff;
+  border-color: #0b74de;
+}
+
+.muted {
+  font-size: 12px;
+  color: #666;
+}
+
+/* small utilities that replace inline style snippets */
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-6 {
+  margin-top: 6px;
+}
+.mr-8 {
+  margin-right: 8px;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.flex-1 {
+  flex: 1;
+}
+.text-right {
+  text-align: right;
+}
+.summary-box {
+  border-top: 1px dashed #e6e6e6;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* Additional utilities moved from Body.js */
+.cursor-pointer {
+  cursor: pointer;
+}
+.about-text {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.mb-6 {
+  margin-bottom: 6px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-12 {
+  margin-bottom: 12px;
+}
+.products-container {
+  img {
+    width: 50px;
+    margin: 15px 4px;
+  }
+}

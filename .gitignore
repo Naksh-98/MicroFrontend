@@ -1,0 +1,21 @@
+# Dependency folders
+node_modules/
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+
+# Editor/IDE or OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment and logs
+.env
+*.log
+
+# Coverage and output
+coverage/
+.nyc_output/
