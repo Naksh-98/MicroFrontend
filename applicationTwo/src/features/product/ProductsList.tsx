@@ -9,13 +9,15 @@ const ProductsList = () => {
     const [cartItems, setCartItems] = React.useState<Product[]>([]);
 
     const handleAddToCart = (product: Product) => {
+        // debugger;
         setCartItems(previous => {
             const updatedItems = [...previous, product];
-            window.dispatchEvent(new CustomEvent("addToCart", { detail: cartItems }));
+            window.dispatchEvent(new CustomEvent("addToCart", { detail: updatedItems }));
+
             return updatedItems;
         });
     }
-    console.log(cartItems,"im the cart");
+    console.log(cartItems, "im the cart");
 
     return (
         <div>
