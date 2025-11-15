@@ -1,12 +1,12 @@
 import React from 'react';
 import { configureStore } from "@reduxjs/toolkit";
-import ProductReducer from "../features/product/productsSlice";
+import productReducer from "../features/product/productsSlice";
 import { productsApi } from "../services/productsApi";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 
 const store = configureStore({
     reducer: {
-        product: ProductReducer,
+        product: productReducer,
         [productsApi.reducerPath]: productsApi.reducer
     },
     middleware: (getDefaultMiddleware) => {
@@ -17,5 +17,6 @@ const store = configureStore({
 // const StoreProvider = ({ children }) => (
 //     <Provider store={store}>{children}</Provider>
 // );
+export type RootState = ReturnType<typeof store.getState>
+// export type AppDispatch = ReturnType<typeof store.dispatch>
 export default store;
-// export { store };

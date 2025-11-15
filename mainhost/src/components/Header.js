@@ -1,6 +1,6 @@
 import React, { lazy, useState, useEffect } from 'react'
 import MainLogo from '../Images/mainlogo.jpg'
-// const CartItems = lazy(() => import('productApp/CartItems'));
+import { Link } from "react-router-dom"
 
 const Header = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -28,11 +28,12 @@ const Header = () => {
           </div>
           <nav className="nav-menu">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/cart">{cartItems?.length} cart</a></li>
+              <li><Link to="/">Home </Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/cart">{cartItems?.length} cart</Link></li>
             </ul>
           </nav>
         </div>

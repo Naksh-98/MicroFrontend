@@ -53,7 +53,8 @@ module.exports = {
                 "./StoreProvider": "./src/app/store",
                 "./mainCss": "./src/css/main.scss",
                 "./Exposes": "./src/export/ProductExposes",
-                "./CartExposes": "./src/export/CartExposes"
+                "./CartExposes": "./src/export/CartExposes",
+                "./AsidePicker": "./src/export/AsidePicker",
             },
             shared: {
                 react: {
