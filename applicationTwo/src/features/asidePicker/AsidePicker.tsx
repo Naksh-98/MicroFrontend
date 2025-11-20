@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../product/productsSlice';
 import { RootState } from '../../app/store';
 import '../../css/main.scss';
+import DeleatBar from "../deleatBar/DeleatBar";
+import RangeBar from "../rangePicker/rangePicker";
 
 const AsidePicker = () => {
     const dispatch = useDispatch();
@@ -35,6 +37,8 @@ const AsidePicker = () => {
                         </li>
                     ))}
                 </ul>
+                <RangeBar />
+                <DeleatBar />
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import React, { lazy, useState, useEffect } from 'react'
 import MainLogo from '../Images/mainlogo.jpg'
 import { Link } from "react-router-dom"
+import SignInScreen from '../features/SignInScreen'
 
 const Header = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -16,6 +17,7 @@ const Header = () => {
       window.removeEventListener('addToCart', handleAddToCart);
     };
   }, []);
+  console.log(window.addEventListener,"kjdsfjhgsalf")
 
   console.log(cartItems, "the cart items in the one");
   return (
@@ -29,10 +31,10 @@ const Header = () => {
           <nav className="nav-menu">
             <ul>
               <li><Link to="/">Home </Link></li>
-              <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/signin">signin</Link></li>
               <li><Link to="/cart">{cartItems?.length} cart</Link></li>
             </ul>
           </nav>

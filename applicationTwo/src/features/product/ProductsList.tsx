@@ -7,11 +7,13 @@ import { addToCart } from './productsSlice';
 import { RootState } from '../../app/store';
 import AsidePicker from '../asidePicker/AsidePicker';
 
-
 const ProductsList = () => {
     const { data, error, isLoading } = useGetProductsQuery()
-    // const [cartItems, setCartItems] = React.useState<Product[]>([]);
     const dispatch = useDispatch();
+    // const [cartItems, setCartItems] = React.useState<Product[]>([]);
+
+  
+    // {}
 
     const cartItems = useSelector((state: RootState) => state.product.cartItems);
     const selectedFilter = useSelector((state: RootState) => state.product.filter);
@@ -22,28 +24,19 @@ const ProductsList = () => {
         if (selectedFilter === '' || selectedFilter === 'all') {
             return data;
         }
-        return data.filter((product: Product) => 
+        return data.filter((product: Product) =>
             product.category.toLowerCase() === selectedFilter.toLowerCase()
         );
     }, [data, selectedFilter]);
+
     const handleAddToCart = (product: Product) => {
         dispatch(addToCart(product));
-        // setCartItems(previous => {
-        // const updatedItems = [...previous, product];
-        // window.dispatchEvent(new CustomEvent("addToCart", { detail: updatedItems }));
-        // return updatedItems;
-        // });
     }
 
     // Sync Redux cartItems with window event for microfrontend communication
     useEffect(() => {
-        if (cartItems.length > 0) {
-            window.dispatchEvent(new CustomEvent("addToCart", { detail: cartItems }));
-        }
-    }, [cartItems]);
-
-    console.log(cartItems, "im the cart")
-
+        window.dispatchEvent(new CustomEvent("addToCart", { detail: cartItems }));
+    }, [cartItems, dispatch]);
 
     if (error) return <div>Error: {(error as any).message}</div>
     return (
@@ -77,6 +70,7 @@ const ProductsList = () => {
                     )
                 }
             </div>
+
         </div>
     )
 }

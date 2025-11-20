@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ProductReducer from "../features/product/productsSlice";
-import { productsApi } from "../services/productsApi";
+// import ProductReducer from "../features/product/productsSlice";
+import { loginApi } from "../services/loginApi";
 
 const store = configureStore({
     reducer: {
-        product: ProductReducer,
-        [productsApi.reducerPath]: productsApi.reducer
+        // product: ProductReducer,
+        [loginApi.reducerPath]: loginApi.reducer
     },
     middleware: (getDefaultMiddleware) =>{
-        return getDefaultMiddleware().concat(productsApi.middleware)
+        return getDefaultMiddleware().concat(loginApi.middleware)
     },
     devTools: true
 })

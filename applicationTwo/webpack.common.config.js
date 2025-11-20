@@ -54,7 +54,9 @@ module.exports = {
                 "./mainCss": "./src/css/main.scss",
                 "./Exposes": "./src/export/ProductExposes",
                 "./CartExposes": "./src/export/CartExposes",
-                "./AsidePicker": "./src/export/AsidePicker",
+                "./NavigationRout": "./src/routing/navigationContext",
+                "./CompareProducts": "./src/features/product/CompareProducts"
+                // "./AsidePicker": "./src/export/AsidePicker",
             },
             shared: {
                 react: {

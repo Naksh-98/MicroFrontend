@@ -14,16 +14,17 @@ import {
 const Header = lazy(() => import('./src/components/Header'));
 const Footer = lazy(() => import('./src/components/Footer'));
 const Homepage = lazy(() => import('./src/components/HomePage'));
+const SignInScreen = lazy(() => import('./src/features/SignInScreen'));
+const ProductsWrapper = lazy(() => import('./src/wrapper/ProductsWrapper'))
 
 //product list from remote
 // const ProductsList = React.lazy(() => import('productsApp/ProductsList'));
 
 //store provider from remote
 const StoreProvider = lazy(() => import('productsApp/StoreProvider'));
-const ProductsList = lazy(() => import('productsApp/Exposes'));
-
 const ErrorFallback = lazy(() => import('./src/components/ErrorBoundry'));
 const CartExposes = lazy(() => import('productsApp/CartExposes'));
+const CompareProducts = lazy(() => import('productsApp/CompareProducts'));
 
 
 function Layout() {
@@ -36,7 +37,6 @@ function Layout() {
             </Suspense>
         </>
     )
-
 }
 
 const router = createBrowserRouter(
@@ -44,8 +44,10 @@ const router = createBrowserRouter(
         <>
             <Route element={<Layout />}>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/products" element={<ProductsList />} />
+                <Route path="/signin" element={<SignInScreen />} />
+                <Route path="/products" element={<ProductsWrapper />} />
                 <Route path="/cart" element={<CartExposes />} />
+                <Route path="/product/comapre" element={<CompareProducts />} />
             </Route>
         </>
     )
