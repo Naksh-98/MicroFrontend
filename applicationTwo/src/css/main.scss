@@ -711,9 +711,24 @@
 }
 .pricepicker {
   margin-top: 30px;
-  .checkbox{
+  .pricepicker-inputs {
+    .slider {
+      width: 200px;
+      margin-left: 20px;
+    }
+    .css-r64h58-MuiSlider-rail {
+      background-color: rgb(162 162 162);
+    }
+    // border: 1px solid #084a94;
+    // display: grid;
+    // grid: 25px 25px / auto auto;
+    // label {
+    //   grid-column: 1 / 3;
+    // }
+  }
+  .checkbox {
     display: grid;
-    grid: 15px 15px 15px/ auto auto;
-  grid-gap: 10px;
+    grid: 15px 15px 15px / auto auto;
+    grid-gap: 10px;
   }
 }
