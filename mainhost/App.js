@@ -12,6 +12,7 @@ import {
 
 //header and footer from remote
 const Header = lazy(() => import('./src/components/Header'));
+const HeaderSearch = lazy(() => import('./src/components/SearchHeader'));
 const Footer = lazy(() => import('./src/components/Footer'));
 const Homepage = lazy(() => import('./src/components/HomePage'));
 const SignInScreen = lazy(() => import('./src/features/SignInScreen'));
@@ -32,6 +33,7 @@ function Layout() {
         <>
             <Suspense fallback={<div>Loading...</div>}>
                 <Header />
+                <HeaderSearch/>
                 <Outlet />
                 <Footer />
             </Suspense>

@@ -1,7 +1,6 @@
-import React, { lazy, useState, useEffect } from 'react'
-import MainLogo from '../Images/mainlogo.jpg'
+import React, { useState, useEffect } from 'react'
+import MainLogo from '../Images/mainLogo.png'
 import { Link } from "react-router-dom"
-import SignInScreen from '../features/SignInScreen'
 
 const Header = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -17,9 +16,7 @@ const Header = () => {
       window.removeEventListener('addToCart', handleAddToCart);
     };
   }, []);
-  console.log(window.addEventListener,"kjdsfjhgsalf")
 
-  console.log(cartItems, "the cart items in the one");
   return (
     <>
       <header className="header">

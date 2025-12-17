@@ -1,6 +1,10 @@
 # Dependency folders
 node_modules/
 pnpm-lock.yaml
+# Ignore pnpm store at any depth outside the current project (handle monorepos/microfrontends)
+**/.pnpm-store/
+# Or, if you only want to ignore the pnpm store at a specific relative path:
+# ../../../.pnpm-store
 
 # Build output
 dist/
