@@ -5,6 +5,9 @@ import { RootState } from '../../app/store';
 import '../../css/main.scss';
 import DeleatBar from "../deleatBar/DeleatBar";
 import RangeBar from "../rangePicker/rangePicker";
+// interface AsidePickerProps {
+//     categoryMatch?: string;
+// }
 
 const AsidePicker = () => {
     const dispatch = useDispatch();
@@ -21,6 +24,7 @@ const AsidePicker = () => {
     const handleCategoryClick = (categoryId: string) => {
         dispatch(setFilter(categoryId));
     };
+    console.log(selectedFilter, "asdasd")
 
     return (
         <div className="asidebar-container">
@@ -30,7 +34,7 @@ const AsidePicker = () => {
                     {categories.map((category) => (
                         <li
                             key={category.id}
-                            className={`asidebar-item ${selectedFilter === category.id ? 'active' : ''}`}
+                            className={`asidebar-item ${selectedFilter === category.id || (selectedFilter === "" && category.id === "all") ? 'active' : ''}`}
                             onClick={() => handleCategoryClick(category.id)}
                         >
                             {category.label}

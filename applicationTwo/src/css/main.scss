@@ -558,34 +558,39 @@
 }
 
 .asidebar-item {
-  padding: 0.875rem 1rem;
+  padding: 11px 10px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 10px;
   font-weight: 500;
   color: #555;
   background: #f8f9fa;
   border: 1px solid transparent;
   transition: all 0.2s ease;
   user-select: none;
+  height: 10px;
 
   &:hover {
     background: #e9ecef;
-    border-color: #0b74de;
-    color: #0b74de;
+    border-color: #ff9800;
+    color: #ff9800;
     transform: translateX(4px);
   }
 
   &.active {
-    background: linear-gradient(135deg, #0b74de 0%, #095bb5 100%);
+    padding: 10px 12px;
+    background: linear-gradient(90deg, #ff9800, #ffb74d);
     color: #fff;
-    border-color: #0b74de;
+    border-color: #ff9800;
     box-shadow: 0 2px 8px rgba(11, 116, 222, 0.3);
     font-weight: 600;
     transform: translateX(4px);
+    height: 20px;
+    font-size: 16px;
 
     &:hover {
-      background: linear-gradient(135deg, #095bb5 0%, #084a94 100%);
+      // padding: 10px 12px;
+      background: linear-gradient(90deg, #ff9800, #ffb74d);
       transform: translateX(6px);
     }
   }

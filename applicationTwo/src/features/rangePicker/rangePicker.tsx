@@ -1,26 +1,34 @@
-import React, { HtmlHTMLAttributes, useState } from 'react'
+import React, {  useState } from 'react'
 import { Slider } from '@mui/material';
+import { setFilterRange } from '../product/productsSlice';
+import { useDispatch } from 'react-redux';
 
-const MIN_PRICE = 500;
+const MIN_PRICE = 10;
 const MAX_PRICE = 10000;
 
 const RedirectionLinks = () => {
   const [price, setPrice] = useState<number[]>([MIN_PRICE, MAX_PRICE]);
   const [boxChecked, setBoxChecked] = useState<number[][]>([]);
+  const dispatch = useDispatch();
+
   const handleChange = (event: Event, newValue: number[]) => {
     setPrice(newValue)
+    dispatch(setFilterRange(newValue));
   }
   const boxClicked = (e: React.MouseEvent<HTMLInputElement>) => {
-    let dataArray = [[500, 1000], [1000, 5000], [5000, MAX_PRICE]]
+    let dataArray = [[10, 100], [100, 500], [500, MAX_PRICE]]
     const target = e.target as HTMLInputElement
     if (target.name === "priceone") {
       setPrice(dataArray[0])
+      dispatch(setFilterRange(dataArray[0]));
       setBoxChecked([...boxChecked, dataArray[0]])
     } else if (target.name === "pricetwo") {
       setPrice(dataArray[1])
+      dispatch(setFilterRange(dataArray[1]));
       setBoxChecked([...boxChecked, dataArray[1]])
-    } else if (target.name === "pricetwo") {
+    } else if (target.name === "pricethree") {
       setPrice(dataArray[2])
+      dispatch(setFilterRange(dataArray[2]));
       setBoxChecked([...boxChecked, dataArray[2]])
     }
   }
@@ -45,7 +53,7 @@ const RedirectionLinks = () => {
         <h1>Price Range</h1>
         <div className='checkbox'>
           <div>
-            <label htmlFor="priceone">500 - 1000</label>
+            <label htmlFor="priceone">10 - 100</label>
           </div>
           <div>  <input
             type="checkbox"
@@ -57,7 +65,7 @@ const RedirectionLinks = () => {
             }
           /></div>
           <div>
-            <label htmlFor="pricetwo">1000 - 5000</label>
+            <label htmlFor="pricetwo">100 - 500</label>
           </div>
           <div>  <input
             type="checkbox"
@@ -69,7 +77,7 @@ const RedirectionLinks = () => {
             }
           /></div>
           <div>
-            <label htmlFor="pricethree">5000 - 10000+</label>
+            <label htmlFor="pricethree">500 - 100000+</label>
           </div>
           <div> <input
             type="checkbox"
